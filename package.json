@@ -1,0 +1,19 @@
+{
+  "name": "clean-node-api",
+  "version": "1.0.0",
+  "description": "Tdd arch",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sorattorafa/clean-node-api.git"
+  },
+  "author": "Rafael Rampim Soratto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sorattorafa/clean-node-api/issues"
+  },
+  "homepage": "https://github.com/sorattorafa/clean-node-api#readme"
+}

@@ -15,5 +15,16 @@
   "bugs": {
     "url": "https://github.com/sorattorafa/clean-node-api/issues"
   },
-  "homepage": "https://github.com/sorattorafa/clean-node-api#readme"
+  "lint-staged": {
+    "*.js": [
+      "standart"
+    ]
+  },
+  "homepage": "https://github.com/sorattorafa/clean-node-api#readme",
+  "devDependencies": {
+    "husky": "^4.0.0",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.5.0",
+    "standart": "^6.1.0"
+  }
 }

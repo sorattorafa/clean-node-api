@@ -4,7 +4,8 @@
   "description": "Tdd arch",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --watchAll", 
+    "test:staged": "jest"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,11 @@
   "lint-staged": {
     "*.js": [
       "standart"
+    ]
+  }, 
+  "standard": {
+    "env": [
+      "jest"
     ]
   },
   "homepage": "https://github.com/sorattorafa/clean-node-api#readme",

@@ -1,10 +1,12 @@
-// sut is the object the will be test 
-// sut = new class Login router that returns the status Code  and the missing param 
-// class login Router verify if has httpRequest and httpResquest.body 
+// class login Router first verify if has httpRequest and httpResquest.body 
 // after verify that contains the email and password 
 const httpResponse = require('../helpers/httpResponse'); 
 
-module.exports = class LoginRouter{ 
+module.exports = class LoginRouter{   
+    constructor(authUseCase){ 
+        this.authUseCase = authUseCase
+    }
+    // verify request
     route(httpRequest){  
         if(!httpRequest || !httpRequest.body){ 
             return httpResponse.serverError() 
@@ -15,7 +17,8 @@ module.exports = class LoginRouter{
         } 
         if(!email){ 
             return httpResponse.badRequest(`email`)        
-        }
+        } 
+        this.authUseCase.auth(email, password)
     }
 }  
  

@@ -1,11 +1,29 @@
 const LoginRouter = require('./login-router'); 
 const MissingParamError = require('../helpers/missing-param-error'); 
+  
+//design patter : factory method
+// => create instance of object, if change instance change all objects
+const makeSut = () => {   
+  // fake object // not a construction class
+  class AuthUseCaseSpy{ 
+    auth(email, password){ 
+      this.email = email  
+      this.password = password 
 
+    }
+  } 
+  const authUseCaseSpy = new AuthUseCaseSpy()
+  const sut = new LoginRouter(authUseCaseSpy) 
+  return { 
+    sut,  
+    authUseCaseSpy
+  }
+}
 // describe the login test's
 describe('Login router', () => {  
     // if no email is provided 
     test('Should return 400 if no email is provided', async () => {
-        const sut = new LoginRouter() 
+        const { sut}  = makeSut() 
         const httpRequest = {
           body: {
             password: 'any_password'
@@ -19,7 +37,7 @@ describe('Login router', () => {
       })  
       // if no password is provided
       test('Should return 400 if no password is provided', async () => {
-        const sut = new LoginRouter() 
+        const { sut}  = makeSut() 
         const httpRequest = {
           body: {
             email: 'any_email'
@@ -31,8 +49,22 @@ describe('Login router', () => {
       })     
       // if no httpRequest
       test('Should return 500 if no httpRequest', async () => {
-        const sut = new LoginRouter()         
+        const { sut}  = makeSut()        
         const httpResponse = await sut.route({})
         expect(httpResponse.statusCode).toBe(500)
+      })   
+      test('Should call AuthUseCase with correct params', async () => {
+        const { sut, authUseCaseSpy}  = makeSut() 
+        const httpRequest = {
+          body: {
+            email: 'any_email',
+            password: 'any_password'
+          } 
+        }         
+        sut.route(httpRequest) 
+        // verify if email and password usecase is equal to request email and password body
+        expect(authUseCaseSpy.email).toBe(httpRequest.body.email) 
+        expect(authUseCaseSpy.password).toBe(httpRequest.body.password)
       })  
+
 })

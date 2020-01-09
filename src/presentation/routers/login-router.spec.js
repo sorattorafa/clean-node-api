@@ -1,5 +1,6 @@
 const LoginRouter = require('./login-router'); 
-const MissingParamError = require('../helpers/missing-param-error'); 
+const MissingParamError = require('../helpers/missing-param-error');  
+const UnauthorizedError = require('../helpers/unautorizedError'); 
   
 //design patter : factory method
 // => create instance of object, if change instance change all objects
@@ -52,7 +53,8 @@ describe('Login router', () => {
         const { sut}  = makeSut()        
         const httpResponse = await sut.route({})
         expect(httpResponse.statusCode).toBe(500)
-      })   
+      })    
+
       test('Should call AuthUseCase with correct params', async () => {
         const { sut, authUseCaseSpy}  = makeSut() 
         const httpRequest = {
@@ -65,6 +67,24 @@ describe('Login router', () => {
         // verify if email and password usecase is equal to request email and password body
         expect(authUseCaseSpy.email).toBe(httpRequest.body.email) 
         expect(authUseCaseSpy.password).toBe(httpRequest.body.password)
+      })   
+ 
+      // 401 = not user identified 
+      // 403 = identify user but he dont have admin access
+      test('Should return 401 if invalid credentials are provided', async () => {
+        const { sut, authUseCaseSpy}  = makeSut() 
+        const httpRequest = {
+          body: {
+            email: 'any_email',
+            password: 'any_password'
+          } 
+        }          
+
+        const httpResponse = sut.route(httpRequest) 
+        // verify if email and password usecase is equal to request email and password body
+        expect(httpResponse.statusCode).toBe(401)  
+
+        expect(httpResponse.body).toEqual(new UnauthorizedError())
       })  
 
 })

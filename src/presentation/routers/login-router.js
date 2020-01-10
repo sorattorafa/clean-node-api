@@ -8,7 +8,7 @@ module.exports = class LoginRouter{
     }
     // verify request
     route(httpRequest){  
-        if(!httpRequest || !httpRequest.body){ 
+        if(!httpRequest || !httpRequest.body || !this.authUseCase || !this.authUseCase.auth){ 
             return httpResponse.serverError() 
         }
         const {email, password} = httpRequest.body; 

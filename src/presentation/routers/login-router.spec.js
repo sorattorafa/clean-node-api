@@ -75,8 +75,8 @@ describe('Login router', () => {
         const { sut, authUseCaseSpy}  = makeSut() 
         const httpRequest = {
           body: {
-            email: 'any_email',
-            password: 'any_password'
+            email: 'invalid_email',
+            password: 'invalid_password'
           } 
         }          
 
@@ -86,5 +86,20 @@ describe('Login router', () => {
 
         expect(httpResponse.body).toEqual(new UnauthorizedError())
       })  
+ 
+
+      test('Should return 500 if no AuthCase has no auth method', async () => {
+        const sut = new LoginRouter({})  // pass a empty object
+        const httpRequest = {
+          body: {
+            email: 'any_email',
+            password: 'any_password'
+          } 
+        }          
+
+        const httpResponse = sut.route(httpRequest) 
+        // verify if email and password usecase is equal to request email and password body
+        expect(httpResponse.statusCode).toBe(500)  
+      })   
 
 })

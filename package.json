@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll", 
-    "test:staged": "jest -passWithNoTests"
+    "test:staged": "npm run test -passWithNoTests"
   },
   "repository": {
     "type": "git",

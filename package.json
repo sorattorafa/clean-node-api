@@ -4,8 +4,8 @@
   "description": "Tdd arch",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll", 
-    "test:staged": "npm run test -passWithNoTests"
+    "test": "jest --watchAll --silent --colors",
+    "test:staged": "npm run test -passWithNoTests --findRelatedTests"
   },
   "repository": {
     "type": "git",
@@ -16,11 +16,6 @@
   "bugs": {
     "url": "https://github.com/sorattorafa/clean-node-api/issues"
   },
-  "lint-staged": {
-    "*.js": [
-      "standart"
-    ]
-  }, 
   "standard": {
     "env": [
       "jest"

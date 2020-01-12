@@ -8,7 +8,9 @@
     "test:staged": "npm run test -passWithNoTests --findRelatedTests"
   }, 
   "lint-staged":{ 
-    "*.js": ["standart"]
+    "*.js": [ 
+      "standard" 
+    ]
   },
   "repository": {
     "type": "git",

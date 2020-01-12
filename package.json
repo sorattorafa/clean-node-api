@@ -4,7 +4,7 @@
   "description": "Tdd arch",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll --silent --colors",
+    "test": "jest --watchAll --silent --colors", 
     "test:staged": "npm run test -passWithNoTests --findRelatedTests"
   },
   "repository": {
@@ -17,13 +17,11 @@
     "url": "https://github.com/sorattorafa/clean-node-api/issues"
   },
   "standard": {
-    "env": [
-      "jest"
-    ]
+    "env": ["jest"]
   },
   "homepage": "https://github.com/sorattorafa/clean-node-api#readme",
   "devDependencies": {
-    "husky": "^4.0.0",
+    "husky": "^4.0.0-beta.5",
     "jest": "^24.9.0",
     "lint-staged": "^9.5.0",
     "standart": "^6.1.0"

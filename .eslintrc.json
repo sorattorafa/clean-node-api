@@ -1,0 +1,14 @@
+
+{
+    "extends": "standard-with-typescript",
+    "env": {
+      "jest": true
+    },
+    "parserOptions": {
+        "project": "./tsconfig.json",
+        "ecmaVersion": 2019
+    },
+    "rules": {
+      "@typescript-eslint/strict-boolean-expressions": "off"
+    }
+  }

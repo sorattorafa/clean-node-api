@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll --silent --colors", 
-    "test:staged": "npm run test -passWithNoTests --findRelatedTests"
+    "test:staged": "npm run test -passWithNoTests --findRelatedTests",  
+    "lint-staged":{ 
+      "*.js": ["standart"]
+    }
   },
   "repository": {
     "type": "git",
@@ -25,8 +28,5 @@
     "jest": "^24.9.0",
     "lint-staged": "^9.5.0",
     "standart": "^6.1.0"
-  }, 
-  "lint-staged":{ 
-    "*.js": ["standart"]
   }
 }

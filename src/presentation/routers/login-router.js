@@ -1,8 +1,8 @@
 // class login Router first verify if has httpRequest and httpResquest.body 
 // after verify that contains the email and password 
 const httpResponse = require('../helpers/httpResponse')
-const MissingParamError = require('../helpers/missing-param-error')
-const InvalidParamError = require('../helpers/invalid-param-error')
+
+const { MissingParamError, InvalidParamError } = require('../errors') 
 
 
 module.exports = class LoginRouter{   

@@ -1,8 +1,6 @@
 // class httpResponse return the status code of error 
 // exemple bad request and server request 
-const MissingParamError = require('./missing-param-error') 
-const UnauthorizedError = require('./unautorizedError') 
-const ServerError = require('./server-error')
+const { UnauthorizedError, ServerError } = require('../errors') 
 
 module.exports = class httpResponse { 
     static badRequest(error){ 

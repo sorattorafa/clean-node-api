@@ -1,3 +1,5 @@
+// mock version of validator 
+const validator = require('validator') 
 module.exports = {  
     isEmailValid: true,  
     email: '',

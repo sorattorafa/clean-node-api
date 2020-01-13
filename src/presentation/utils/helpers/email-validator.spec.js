@@ -1,4 +1,5 @@
-const EmailValidator = require('./email-validator')  
+const EmailValidator = require('./email-validator')   
+// mock version of validator
 const validator = require('validator')  
 
 // make sut is the factory 

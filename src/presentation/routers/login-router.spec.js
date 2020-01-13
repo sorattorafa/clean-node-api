@@ -1,5 +1,6 @@
 const LoginRouter = require('./login-router'); 
-const { UnauthorizedError, ServerError, MissingParamError, InvalidParamError } = require('../errors') 
+const { MissingParamError, InvalidParamError } = require('../../utils/errors') 
+const { UnauthorizedError, ServerError} = require('../errors') 
 //design patter : factory method
 // => create instance of object, if change instance change all objects
 const makeSut = () => {   

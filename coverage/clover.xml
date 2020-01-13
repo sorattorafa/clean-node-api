@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1578883725813" clover="3.2.0">
-  <project timestamp="1578883725813" name="All files">
+<coverage generated="1578884386888" clover="3.2.0">
+  <project timestamp="1578884386888" name="All files">
     <metrics statements="39" coveredstatements="39" conditionals="8" coveredconditionals="8" methods="10" coveredmethods="10" elements="57" coveredelements="57" complexity="0" loc="39" ncloc="39" packages="2" files="6" classes="6"/>
     <package name="helpers">
       <metrics statements="20" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
@@ -50,19 +50,19 @@
         <line num="8" count="1" type="stmt"/>
         <line num="10" count="15" type="stmt"/>
         <line num="11" count="15" type="stmt"/>
+        <line num="15" count="15" type="stmt"/>
         <line num="16" count="15" type="stmt"/>
-        <line num="17" count="15" type="stmt"/>
-        <line num="18" count="13" type="cond" truecount="2" falsecount="0"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="21" count="12" type="cond" truecount="2" falsecount="0"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="24" count="11" type="cond" truecount="2" falsecount="0"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="28" count="4" type="stmt"/>
-        <line num="29" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="30" count="1" type="stmt"/>
-        <line num="32" count="3" type="stmt"/>
-        <line num="35" count="8" type="stmt"/>
+        <line num="17" count="13" type="cond" truecount="2" falsecount="0"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="20" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="23" count="11" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="27" count="4" type="stmt"/>
+        <line num="28" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="31" count="3" type="stmt"/>
+        <line num="34" count="8" type="stmt"/>
       </file>
     </package>
   </project>

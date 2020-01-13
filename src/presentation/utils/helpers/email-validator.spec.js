@@ -1,9 +1,14 @@
 const EmailValidator = require('./email-validator')  
-const validator = require('validator') 
+const validator = require('validator')  
+
+// make sut is the factory 
+const makeSut = () => { 
+    return new EmailValidator()
+}
  
 describe('Email validator', () => { 
     test('Shold return true if validator is true', () => { 
-        const sut = new EmailValidator()  
+        const sut = makeSut() 
         const isEmailValid = sut.isValid('validemail@email.com') 
         expect(isEmailValid).toBe(true)
     })   
@@ -12,7 +17,7 @@ describe('Email validator', () => {
     // it's  mocking function operation
     test('Shold return false if validator is false', () => {  
         validator.isEmailValid = false
-        const sut = new EmailValidator()  
+        const sut = makeSut()  
         const isEmailValid = sut.isValid('invalidemail') 
         expect(isEmailValid).toBe(false)
     })

@@ -4,7 +4,7 @@
   "description": "Tdd arch",
   "main": "index.js",
   "scripts": {
-    "test": "jest --silent --colors --noStackTrace --passWithNoTests", 
+    "test": "jest --silent --colors --noStackTrace --passWithNoTests",
     "test:integration": "npm run test -- --watchAll -c  jest-integration-config.js",
     "test:unit": "npm run test -- --watchAll -c  jest-unit-config.js",
     "test:staged": "npm run test -- --findRelatedTests",
@@ -30,5 +30,8 @@
     "husky": "^4.0.7",
     "jest": "^24.9.0",
     "lint-staged": "^9.5.0"
+  },
+  "dependencies": {
+    "validator": "^12.1.0"
   }
 }

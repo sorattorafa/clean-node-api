@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --silent --colors",
     "test:staged": "npm run test -passWithNoTests --findRelatedTests",
-    "test:ci": "jest --coverage"
+    "test:ci": "jest --coverage --noStackTrace --silent"
   },
   "repository": {
     "type": "git",

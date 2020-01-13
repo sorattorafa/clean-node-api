@@ -4,13 +4,9 @@
   "description": "Tdd arch",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll --silent --colors", 
-    "test:staged": "npm run test -passWithNoTests --findRelatedTests"
-  }, 
-  "lint-staged":{ 
-    "*.js": [ 
-      "standard" 
-    ]
+    "test": "jest --silent --colors",
+    "test:staged": "npm run test -passWithNoTests --findRelatedTests",
+    "test:ci": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -22,13 +18,15 @@
     "url": "https://github.com/sorattorafa/clean-node-api/issues"
   },
   "standard": {
-    "env": ["jest"]
+    "env": [
+      "jest"
+    ]
   },
   "homepage": "https://github.com/sorattorafa/clean-node-api#readme",
   "devDependencies": {
+    "eslint-plugin-standard": "^4.0.1",
     "husky": "^4.0.0-beta.5",
     "jest": "^24.9.0",
-    "lint-staged": "^9.5.0",
-    "standart": "^6.1.0"
+    "lint-staged": "^9.5.0"
   }
 }

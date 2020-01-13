@@ -1,19 +1,19 @@
 // class login Router first verify if has httpRequest and httpResquest.body 
 // after verify that contains the email and password 
-const httpResponse = require('../helpers/httpResponse');  
-const MissingParamError = require('../helpers/missing-param-error');  
-const InvalidParamError = require('../helpers/invalid-param-error'); 
+const httpResponse = require('../helpers/httpResponse')
+const MissingParamError = require('../helpers/missing-param-error')
+const InvalidParamError = require('../helpers/invalid-param-error')
 
 
 module.exports = class LoginRouter{   
     constructor(authUseCase, emailValidator){ 
         this.authUseCase = authUseCase 
         this.emailValidator = emailValidator
-    }
+    } 
     // verify request
     async route(httpRequest){  
         try{ 
-            const {email, password} = httpRequest.body; 
+            const {email, password} = httpRequest.body
             if(!password){ 
                 return httpResponse.badRequest(new MissingParamError(`password`))        
             } 

@@ -264,7 +264,6 @@ describe('Login router', () => {
         expect(httpResponse.statusCode).toBe(500) 
       })   
       
-      
       test('Should call AuthUseCase with correct email', async () => {
         const { sut, emailValidatorSpy}  = makeSut() 
         const httpRequest = {
@@ -276,9 +275,6 @@ describe('Login router', () => {
         await sut.route(httpRequest) 
         // verify if email and password usecase is equal to request email and password body
         expect(emailValidatorSpy.email).toBe(httpRequest.body.email) 
-      })   
-
- 
-         
+      })            
 
 })
